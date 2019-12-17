@@ -9251,18 +9251,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "Lifes",
-                    "=",
-                    "5"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "Opacity"
                   },
                   "parameters": [
@@ -9343,6 +9331,17 @@
                     "\"anim\""
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TouchSimulateMouse"
+                  },
+                  "parameters": [
+                    "",
+                    "no"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
@@ -9492,6 +9491,40 @@
                     "CmdSpace",
                     "=",
                     "180"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Level",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Lifes",
+                    "=",
+                    "5"
                   ],
                   "subInstructions": []
                 }
