@@ -1815,6 +1815,10 @@
     {
       "name": "Level",
       "value": ""
+    },
+    {
+      "name": "Lifes",
+      "value": ""
     }
   ],
   "layouts": [
@@ -3475,7 +3479,7 @@
         },
         {
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4622,6 +4626,18 @@
                 "0"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Lifes",
+                "=",
+                "5"
+              ],
+              "subInstructions": []
             }
           ],
           "events": [
@@ -5246,13 +5262,13 @@
           "angle": 0,
           "customSize": true,
           "height": 64,
-          "layer": "",
+          "layer": "UI",
           "locked": false,
           "name": "DEBUG",
           "width": 640,
-          "x": 160,
-          "y": -128,
-          "zOrder": 101,
+          "x": 64,
+          "y": -192,
+          "zOrder": 200,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -9178,7 +9194,7 @@
       "events": [
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -9245,18 +9261,6 @@
                     "Santa",
                     "=",
                     "3"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "Lifes",
-                    "=",
-                    "5"
                   ],
                   "subInstructions": []
                 },
@@ -9343,12 +9347,23 @@
                     "\"anim\""
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TouchSimulateMouse"
+                  },
+                  "parameters": [
+                    "",
+                    "no"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
             },
             {
-              "disabled": true,
+              "disabled": false,
               "folded": false,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -9564,17 +9579,6 @@
                     "Level",
                     "=",
                     "\"L e v e l : \"+ToString(GlobalVariable(Level)+1)"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Child",
-                    ""
                   ],
                   "subInstructions": []
                 },
@@ -10429,6 +10433,40 @@
                 }
               ],
               "events": []
+            },
+            {
+              "disabled": true,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Level",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Lifes",
+                    "=",
+                    "5"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ]
         },
@@ -10446,6 +10484,27 @@
           },
           "comment": "CAT MOVEMENT",
           "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "DEBUG",
+                "=",
+                "ToString(GlobalVariable(Lifes))"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         },
         {
           "disabled": false,
@@ -11627,7 +11686,7 @@
         },
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -11688,7 +11747,7 @@
           "events": [
             {
               "disabled": false,
-              "folded": true,
+              "folded": false,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -11775,18 +11834,6 @@
                         "used",
                         "=",
                         "1"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "DEBUG",
-                        "=",
-                        "\"NI\"+ToString(Cube.Variable(giftnumber))"
                       ],
                       "subInstructions": []
                     }
@@ -12237,7 +12284,7 @@
         },
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -12316,18 +12363,6 @@
                   "parameters": [
                     "FinalTree",
                     "\"gift\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "TextObject::String"
-                  },
-                  "parameters": [
-                    "DEBUG",
-                    "=",
-                    "\"F\""
                   ],
                   "subInstructions": []
                 }
@@ -13256,7 +13291,7 @@
         },
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -13394,7 +13429,7 @@
         },
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -13649,7 +13684,7 @@
         },
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -15661,7 +15696,7 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "ModVarScene"
+                    "value": "ModVarGlobal"
                   },
                   "parameters": [
                     "Lifes",
@@ -15694,7 +15729,7 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "VarScene"
+                        "value": "VarGlobal"
                       },
                       "parameters": [
                         "Lifes",
@@ -15775,7 +15810,7 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "VarScene"
+                        "value": "VarGlobal"
                       },
                       "parameters": [
                         "Lifes",
@@ -15854,7 +15889,7 @@
                         "Life",
                         "instance",
                         ">",
-                        "Variable(Lifes)"
+                        "GlobalVariable(Lifes)"
                       ],
                       "subInstructions": []
                     }
@@ -16213,7 +16248,7 @@
           "name": "Start",
           "width": 0,
           "x": 96,
-          "y": 384,
+          "y": 416,
           "zOrder": 23,
           "numberProperties": [],
           "stringProperties": [],
@@ -17101,7 +17136,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.5
+        "zoomFactor": 0.13
       }
     },
     {
